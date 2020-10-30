@@ -1,3 +1,2 @@
-# Hallaka2
-Hallaka
+# Hallaka
 Hallaka android application for barbers and users.
