@@ -19,6 +19,10 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -102,11 +106,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            spinKitView.setVisibility(View.INVISIBLE);
-                            Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            intent.putExtra("data", uEmail);
-                            startActivity(intent);
+
+                            FirebaseDatabase.getInstance().getReference("users").child("profiles").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if(snapshot.exists()){
+                                        spinKitView.setVisibility(View.INVISIBLE);
+                                        String type=snapshot.child("type").getValue(String.class);
+
+                                        if(type.equalsIgnoreCase("Customer")){
+
+//                                            Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                            intent.putExtra("data", uEmail);
+                                            startActivity(intent);
+                                        }
+                                        else{
+                                            Intent intent = new Intent(LoginActivity.this, BarberActivity.class);
+                                            intent.putExtra("data", uEmail);
+                                            startActivity(intent);
+                                        }
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+
+
 
                         } else {
                             spinKitView.setVisibility(View.INVISIBLE);
