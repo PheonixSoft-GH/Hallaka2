@@ -111,7 +111,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/signInBtnSignIn"
         android:layout_toEndOf="@id/rememberPassSignIn"
+        app:buttonTint="@color/colorBlue"
         android:layout_alignBottom="@id/rememberPassSignIn"
+        android:checked="true"
         android:layout_marginTop="15dp"
         android:layout_marginStart="13dp"
         />
