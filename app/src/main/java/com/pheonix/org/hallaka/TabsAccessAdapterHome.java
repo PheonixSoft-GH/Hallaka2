@@ -4,13 +4,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-/**
- * Created by toshiba1 on 7/1/2019.
- */
+public class TabsAccessAdapterHome extends FragmentPagerAdapter {
 
-public class TabsAccessAdapter extends FragmentPagerAdapter {
-
-    public TabsAccessAdapter(FragmentManager fm) {
+    public TabsAccessAdapterHome(FragmentManager fm) {
         super(fm);
     }
 
