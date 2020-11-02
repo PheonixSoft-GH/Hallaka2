@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Models;
 
 public class UserDataModel {
 

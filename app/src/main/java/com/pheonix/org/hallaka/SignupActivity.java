@@ -21,6 +21,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.pheonix.org.hallaka.Models.UserDataModel;
 
 import java.util.Objects;
 import java.util.regex.Matcher;

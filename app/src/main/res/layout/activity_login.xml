@@ -153,6 +153,6 @@
         android:elevation="12dp"
         android:padding="12dp"
         android:visibility="gone"
-        app:SpinKit_Color="@color/colorGreenDark" />
+        app:SpinKit_Color="@color/colorBlueDark" />
 
 </RelativeLayout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAE9E9"
+    android:padding="10dp"
+    tools:context=".BarberActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/profileLayBarber"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/menu_back"
+            android:paddingTop="8dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/menuBtnBarber"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_menu"/>
+
+
+            <TextView
+                android:id="@+id/userNameBarber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/menuBtnBarber"
+                android:text="Eddy Peter"
+                android:textStyle="bold"
+                android:textColor="#3D4FB8"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/typeBarber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userNameBarber"
+                android:layout_toEndOf="@+id/menuBtnBarber"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="2dp"
+                android:text="Barber"
+                android:textColor="#3D4FB8"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/menuLayBarber"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@+id/profileLayBarber"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:id="@+id/salonLayBarber"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/menu_back"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/salonIconBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/ic_shop" />
+
+                <TextView
+                    android:id="@+id/salonTxtBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="Salon"
+                    android:textColor="#3D4FB8"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bookingLayBarber"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/menu_back"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/viewBookingIconBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/ic_booking" />
+
+                <TextView
+                    android:id="@+id/viewBookingTxtBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="View Booking"
+                    android:textColor="#3D4FB8"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/AddProductLayBarber"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/menu_back"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/addProductIconBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/ic_add_product" />
+
+                <TextView
+                    android:id="@+id/addProductTxtBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="Add Product"
+                    android:textColor="#3D4FB8"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/historyLayBarber"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="25"
+                android:background="@drawable/menu_back"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/historyIconBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/ic_history" />
+
+                <TextView
+                    android:id="@+id/historyTxtBarber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="History"
+                    android:textColor="#3D4FB8"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+<!--        <androidx.viewpager2.widget.ViewPager2-->
+<!--            android:id="@+id/pager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="120dp"-->
+<!--            android:layout_below="@+id/menuLayBarber"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/menu_back"-->
+<!--            android:padding="8dp" />-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/lookBookLayBarber"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/pager"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/menu_back">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/lookBookTxtBarber"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingStart="12dp"-->
+<!--                android:paddingTop="8dp"-->
+<!--                android:paddingEnd="8dp"-->
+<!--                android:text="Look Book"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/colorBlue"-->
+<!--                android:textSize="18sp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/lookBookIdBarber"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="280dp"-->
+<!--                android:layout_below="@+id/lookBookTxtBarber"-->
+<!--                android:padding="8dp"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/look_book" />-->
+
+<!--        </RelativeLayout>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

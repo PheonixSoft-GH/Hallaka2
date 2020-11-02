@@ -105,6 +105,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             spinKitView.setVisibility(View.INVISIBLE);
                             Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            intent.putExtra("data", uEmail);
                             startActivity(intent);
 
                         } else {
