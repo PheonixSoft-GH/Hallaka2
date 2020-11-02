@@ -3,9 +3,10 @@ package com.pheonix.org.hallaka;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class BarberActivity extends AppCompatActivity {
-
+TextView v;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
