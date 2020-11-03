@@ -20,10 +20,6 @@ public class TabsAccessAdapterShop extends FragmentPagerAdapter {
             case 1:
                 ShopFragment shopFragment = new ShopFragment();
                 return shopFragment;
-            case 2:
-
-            case 3:
-
 
             default:
                 return null;
@@ -32,7 +28,7 @@ public class TabsAccessAdapterShop extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 2;
     }
 
     @Override
@@ -42,10 +38,6 @@ public class TabsAccessAdapterShop extends FragmentPagerAdapter {
                 return "Wax";
             case 1:
                 return "Shop";
-            case 2:
-                return "Home";
-            case 3:
-                return "dd";
 
             default:
                 return null;
