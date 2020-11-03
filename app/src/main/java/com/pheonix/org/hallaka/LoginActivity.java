@@ -119,11 +119,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                                            Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                             intent.putExtra("data", uEmail);
+                                            finish();
                                             startActivity(intent);
                                         }
                                         else{
                                             Intent intent = new Intent(LoginActivity.this, BarberActivity.class);
                                             intent.putExtra("data", uEmail);
+                                            finish();
                                             startActivity(intent);
                                         }
 
@@ -172,6 +174,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             intent.putExtra("data", auth.getCurrentUser().getEmail());
                             startActivity(intent);
+                            finish();
                             spinKitView.setVisibility(View.GONE);
                         }
                         else{
@@ -179,6 +182,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             intent.putExtra("data", auth.getCurrentUser().getEmail());
                             startActivity(intent);
                             spinKitView.setVisibility(View.GONE);
+                            finish();
                         }
 
                     }
