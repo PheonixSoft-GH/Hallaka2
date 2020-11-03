@@ -153,4 +153,43 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(auth!=null){
+            spinKitView.setVisibility(View.VISIBLE);
+            FirebaseDatabase.getInstance().getReference("users").child("profiles").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        spinKitView.setVisibility(View.INVISIBLE);
+                        String type=snapshot.child("type").getValue(String.class);
+
+                        if(type.equalsIgnoreCase("Customer")){
+
+//                                            Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            intent.putExtra("data", auth.getCurrentUser().getEmail());
+                            startActivity(intent);
+                            spinKitView.setVisibility(View.GONE);
+                        }
+                        else{
+                            Intent intent = new Intent(LoginActivity.this, BarberActivity.class);
+                            intent.putExtra("data", auth.getCurrentUser().getEmail());
+                            startActivity(intent);
+                            spinKitView.setVisibility(View.GONE);
+                        }
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    spinKitView.setVisibility(View.GONE);
+                }
+            });
+
+        }
+    }
 }
