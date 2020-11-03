@@ -3,7 +3,6 @@ package com.pheonix.org.hallaka;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class BarberActivity extends AppCompatActivity {
 
@@ -11,5 +10,7 @@ public class BarberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barber);
+
+
     }
 }

@@ -22,11 +22,10 @@
                 android:id="@+id/mainTabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabTextColor="@color/colorBlue"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-            </com.google.android.material.tabs.TabLayout>
-
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabTextColor="@color/colorBlue" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
