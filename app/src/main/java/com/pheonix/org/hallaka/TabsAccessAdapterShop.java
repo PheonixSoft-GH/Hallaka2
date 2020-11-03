@@ -15,11 +15,17 @@ public class TabsAccessAdapterShop extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                HomeFragment homeFragment = new HomeFragment();
-                return homeFragment;
+                WaxFragment waxFragment = new WaxFragment();
+                return waxFragment;
             case 1:
-                ShopFragment shopFragment = new ShopFragment();
-                return shopFragment;
+                SprayFragment sprayFragment = new SprayFragment();
+                return sprayFragment;
+            case 2:
+                HairCareFragment hairCareFragment = new HairCareFragment();
+                return hairCareFragment;
+            case 3:
+                BodyCareFragment bodyCareFragment = new BodyCareFragment();
+                return bodyCareFragment;
 
             default:
                 return null;
@@ -28,7 +34,7 @@ public class TabsAccessAdapterShop extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 4;
     }
 
     @Override
@@ -37,7 +43,12 @@ public class TabsAccessAdapterShop extends FragmentPagerAdapter {
             case 0:
                 return "Wax";
             case 1:
-                return "Shop";
+                return "Spray";
+            case 2:
+                return "Hair Care";
+            case 3:
+                return "Body Care";
+
 
             default:
                 return null;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#EAE9E9"
+    android:background="@color/colorBack"
     tools:context=".ShopFragment">
 
     <RelativeLayout
@@ -15,18 +15,18 @@
             android:id="@+id/appBarLayShop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent">
+            android:background="@color/colorBack"
+            app:elevation="0dp">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/mainTabsShop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabTextColor="@color/colorBlue"
-                app:tabBackground="@drawable/tabs_back"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-            </com.google.android.material.tabs.TabLayout>
-
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabTextColor="@color/colorBlue" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager

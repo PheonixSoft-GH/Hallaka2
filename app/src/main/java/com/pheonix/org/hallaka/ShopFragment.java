@@ -14,9 +14,9 @@ import com.google.android.material.tabs.TabLayout;
 
 public class ShopFragment extends Fragment {
 
-    ViewPager myViewPager;
-    TabLayout myTabLayout;
-    TabsAccessAdapterHome myTabsAccessAdapterHome;
+    ViewPager myViewPagerShop;
+    TabLayout myTabLayoutShop;
+    TabsAccessAdapterShop myTabsAccessAdapterShop;
 
     public ShopFragment() {
         // Required empty public constructor
@@ -28,13 +28,11 @@ public class ShopFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_shop, container, false);
 
-        myTabLayout = view.findViewById(R.id.mainTabsShop);
-        myViewPager = view.findViewById(R.id.mainTab_pagesShop);
-
-        myTabsAccessAdapterHome = new TabsAccessAdapterHome(getFragmentManager());
-        myViewPager.setAdapter(myTabsAccessAdapterHome);
-
-        myTabLayout.setupWithViewPager(myViewPager);
+        myTabLayoutShop = view.findViewById(R.id.mainTabsShop);
+        myViewPagerShop = view.findViewById(R.id.mainTab_pagesShop);
+        myTabsAccessAdapterShop = new TabsAccessAdapterShop(getFragmentManager());
+        myViewPagerShop.setAdapter(myTabsAccessAdapterShop);
+        myTabLayoutShop.setupWithViewPager(myViewPagerShop);
 
         return view;
     }
