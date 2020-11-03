@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SalonActivity"></activity>
+        <activity android:name=".AddProductActivity"></activity>
+        <activity android:name=".ProductsActivity" />
+        <activity android:name=".SalonActivity" />
         <activity android:name=".BarberActivity" />
         <activity android:name=".BookingActivity" />
         <activity android:name=".HomeActivity" />

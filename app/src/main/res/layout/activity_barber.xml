@@ -124,7 +124,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/AddProductLayBarber"
+                android:id="@+id/productLayBarber"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="2dp"
@@ -134,19 +134,19 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/addProductIconBarber"
+                    android:id="@+id/productIconBarber"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
                     android:src="@drawable/ic_add_product" />
 
                 <TextView
-                    android:id="@+id/addProductTxtBarber"
+                    android:id="@+id/productTxtBarber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:gravity="center"
-                    android:text="Add Product"
+                    android:text="Products"
                     android:textColor="#3D4FB8"
                     android:textSize="13sp" />
 
