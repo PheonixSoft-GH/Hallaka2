@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayBarber"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAE9E9"
-    android:padding="10dp"
     tools:context=".BarberActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorBack"
+        android:padding="10dp">
 
         <RelativeLayout
             android:id="@+id/profileLayBarber"
@@ -24,10 +25,10 @@
 
             <ImageView
                 android:id="@+id/menuBtnBarber"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_menu"/>
+                android:src="@drawable/ic_menu" />
 
 
             <TextView
@@ -36,18 +37,18 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/menuBtnBarber"
                 android:text="Eddy Peter"
-                android:textStyle="bold"
                 android:textColor="#3D4FB8"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/typeBarber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/userNameBarber"
-                android:layout_toEndOf="@+id/menuBtnBarber"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/menuBtnBarber"
                 android:text="Barber"
                 android:textColor="#3D4FB8"
                 android:textSize="13sp" />
@@ -60,8 +61,8 @@
             android:layout_height="300dp"
             android:layout_below="@+id/profileLayBarber"
             android:layout_marginTop="10dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:weightSum="100">
 
             <LinearLayout
@@ -182,46 +183,37 @@
 
         </LinearLayout>
 
-<!--        <androidx.viewpager2.widget.ViewPager2-->
-<!--            android:id="@+id/pager"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="120dp"-->
-<!--            android:layout_below="@+id/menuLayBarber"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:background="@drawable/menu_back"-->
-<!--            android:padding="8dp" />-->
-
-<!--        <RelativeLayout-->
-<!--            android:id="@+id/lookBookLayBarber"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/pager"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:background="@drawable/menu_back">-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/lookBookTxtBarber"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingStart="12dp"-->
-<!--                android:paddingTop="8dp"-->
-<!--                android:paddingEnd="8dp"-->
-<!--                android:text="Look Book"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/colorBlue"-->
-<!--                android:textSize="18sp" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/lookBookIdBarber"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="280dp"-->
-<!--                android:layout_below="@+id/lookBookTxtBarber"-->
-<!--                android:padding="8dp"-->
-<!--                android:scaleType="fitXY"-->
-<!--                android:src="@drawable/look_book" />-->
-
-<!--        </RelativeLayout>-->
-
     </RelativeLayout>
 
-</RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navLayBarber"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorBack"
+        android:padding="10dp"
+        android:layout_gravity="left|start">
+
+        <RelativeLayout
+            android:id="@+id/wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/exitIdBarber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:textStyle="bold"
+                android:background="@drawable/menu_back"
+                android:text="Exit"
+                android:gravity="center"
+                android:textColor="@color/colorBlue"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
