@@ -34,6 +34,17 @@ public class ShopFragment extends Fragment {
         myViewPagerShop.setAdapter(myTabsAccessAdapterShop);
         myTabLayoutShop.setupWithViewPager(myViewPagerShop);
 
+        setUpTabMargins();
+
         return view;
+    }
+
+    private void setUpTabMargins() {
+        for(int i=0; i < myTabLayoutShop.getTabCount(); i++) {
+            View tab = ((ViewGroup) myTabLayoutShop.getChildAt(0)).getChildAt(i);
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) tab.getLayoutParams();
+            p.setMargins(0, 0, 10, 0);
+            tab.requestLayout();
+        }
     }
 }

@@ -16,12 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorBack"
+            android:layout_marginTop="10dp"
             app:elevation="0dp">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/mainTabsShop"
+                app:tabMode="scrollable"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:tabBackground="@drawable/tab_selector"
                 app:tabIndicatorColor="@android:color/transparent"
