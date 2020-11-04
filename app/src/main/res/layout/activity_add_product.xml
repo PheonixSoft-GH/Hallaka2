@@ -64,7 +64,7 @@
         android:paddingEnd="15dp" />
 
     <Button
-        android:id="@+id/AddProductId"
+        android:id="@+id/addProductId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/productPriceAddPro"

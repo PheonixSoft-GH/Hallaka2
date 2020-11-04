@@ -118,7 +118,7 @@
         android:paddingEnd="15dp" />
 
     <Button
-        android:id="@+id/AddBarberId"
+        android:id="@+id/addBarberId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/barberSTimingAddBarber"
