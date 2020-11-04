@@ -6,40 +6,40 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:padding="20dp"
-    tools:context=".AddProductActivity">
+    tools:context=".AddBarberActivity">
 
     <TextView
-        android:id="@+id/addProductTxt"
+        android:id="@+id/addBarberTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Add Product Details"
+        android:text="Add Barber"
         android:textColor="@color/colorBlue"
         android:textSize="25sp"
         android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/productImageAddPro"
+        android:id="@+id/barberImageAddBarber"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_below="@+id/addProductTxt"
+        android:layout_below="@+id/addBarberTxt"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic_add_photo"
         android:scaleType="fitXY"/>
 
     <EditText
-        android:id="@+id/productNameAddPro"
+        android:id="@+id/barberNameAddBarber"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/productImageAddPro"
+        android:layout_below="@+id/barberImageAddBarber"
         android:layout_marginTop="10dp"
         android:autofillHints=""
         android:background="@drawable/back_lay_border_gray"
         android:ems="100"
         android:fontFamily="sans-serif"
-        android:hint="Product Name"
+        android:hint="Barber Name"
         android:inputType="text"
         android:maxLines="1"
         android:textSize="15sp"
@@ -47,27 +47,81 @@
         android:paddingEnd="15dp" />
 
     <EditText
-        android:id="@+id/productPriceAddPro"
+        android:id="@+id/barberRateAddBarber"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/productNameAddPro"
+        android:layout_below="@+id/barberNameAddBarber"
         android:layout_marginTop="10dp"
         android:autofillHints=""
         android:background="@drawable/back_lay_border_gray"
         android:ems="100"
         android:fontFamily="sans-serif"
-        android:hint="Product Price"
+        android:hint="Rate per Hour"
         android:textSize="15sp"
         android:inputType="numberDecimal"
         android:maxLines="1"
         android:paddingStart="15dp"
         android:paddingEnd="15dp" />
 
-    <Button
-        android:id="@+id/AddProductId"
+    <TextView
+        android:id="@+id/timingTxtAddBarber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/productPriceAddPro"
+        android:layout_below="@+id/barberRateAddBarber"
+        android:layout_marginTop="10dp"
+        android:paddingStart="12dp"
+        android:paddingTop="0dp"
+        android:layout_marginBottom="7dp"
+        android:paddingEnd="8dp"
+        android:text="Timing"
+        android:textColor="@color/colorBlue"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/barberSTimingAddBarber"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/timingTxtAddBarber"
+        android:layout_toStartOf="@+id/barberCTimingAddBarber"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="0dp"
+        android:autofillHints=""
+        android:gravity="center"
+        android:background="@drawable/back_lay_border_gray"
+        android:ems="100"
+        android:fontFamily="sans-serif"
+        android:hint="Starting Time"
+        android:textSize="15sp"
+        android:inputType="time"
+        android:maxLines="1"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp" />
+
+    <EditText
+        android:id="@+id/barberCTimingAddBarber"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/timingTxtAddBarber"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:autofillHints=""
+        android:background="@drawable/back_lay_border_gray"
+        android:ems="100"
+        android:gravity="center"
+        android:fontFamily="sans-serif"
+        android:hint="Closing Time"
+        android:textSize="15sp"
+        android:inputType="time"
+        android:maxLines="1"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp" />
+
+    <Button
+        android:id="@+id/AddBarberId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/barberSTimingAddBarber"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_button"
         android:text="Submit"

@@ -6,40 +6,40 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:padding="20dp"
-    tools:context=".AddProductActivity">
+    tools:context=".AddSalonActivity">
 
     <TextView
-        android:id="@+id/addProductTxt"
+        android:id="@+id/addSalonTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Add Product Details"
+        android:text="Add Salon Details"
         android:textColor="@color/colorBlue"
         android:textSize="25sp"
         android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/productImageAddPro"
+        android:id="@+id/salonImageAddSalon"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_below="@+id/addProductTxt"
+        android:layout_below="@+id/addSalonTxt"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic_add_photo"
         android:scaleType="fitXY"/>
 
     <EditText
-        android:id="@+id/productNameAddPro"
+        android:id="@+id/salonNameAddSalon"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/productImageAddPro"
+        android:layout_below="@+id/salonImageAddSalon"
         android:layout_marginTop="10dp"
         android:autofillHints=""
         android:background="@drawable/back_lay_border_gray"
         android:ems="100"
         android:fontFamily="sans-serif"
-        android:hint="Product Name"
+        android:hint="Salon Name"
         android:inputType="text"
         android:maxLines="1"
         android:textSize="15sp"
@@ -47,27 +47,27 @@
         android:paddingEnd="15dp" />
 
     <EditText
-        android:id="@+id/productPriceAddPro"
+        android:id="@+id/salonCityAddSalon"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/productNameAddPro"
+        android:layout_below="@+id/salonNameAddSalon"
         android:layout_marginTop="10dp"
         android:autofillHints=""
         android:background="@drawable/back_lay_border_gray"
         android:ems="100"
         android:fontFamily="sans-serif"
-        android:hint="Product Price"
+        android:hint="Salon City"
         android:textSize="15sp"
-        android:inputType="numberDecimal"
+        android:inputType="text"
         android:maxLines="1"
         android:paddingStart="15dp"
         android:paddingEnd="15dp" />
 
     <Button
-        android:id="@+id/AddProductId"
+        android:id="@+id/addSalonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/productPriceAddPro"
+        android:layout_below="@id/salonCityAddSalon"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_button"
         android:text="Submit"

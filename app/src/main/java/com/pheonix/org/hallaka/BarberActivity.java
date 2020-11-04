@@ -19,6 +19,7 @@ public class BarberActivity extends AppCompatActivity {
     NavigationView navigationView;
 
     LinearLayout productsLay;
+    LinearLayout salonLay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class BarberActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navLayBarber);
 
         productsLay = findViewById(R.id.productLayBarber);
+        salonLay = findViewById(R.id.salonLayBarber);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,16 @@ public class BarberActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(BarberActivity.this,ProductsActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        salonLay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(BarberActivity.this,AddSalonActivity.class);
                 startActivity(intent);
 
             }
