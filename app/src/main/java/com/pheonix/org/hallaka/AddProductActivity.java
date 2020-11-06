@@ -12,12 +12,10 @@ import android.widget.Toast;
 
 import com.github.ybq.android.spinkit.SpinKitView;
 
-public class AddProductActivity extends AppCompatActivity {
-
+public class AddProductActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView image;
     EditText name, price;
     Button submit;
-
     SpinKitView spinKitView;
 
     @Override
@@ -31,33 +29,26 @@ public class AddProductActivity extends AppCompatActivity {
         submit = findViewById(R.id.addProductId);
         spinKitView = findViewById(R.id.spin_kit);
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        submit.setOnClickListener(this);
 
-                Submit();
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == submit) {
+            String sName = name.getText().toString();
+            String sPrice = price.getText().toString();
+
+            if (!TextUtils.isEmpty(sName) && !TextUtils.isEmpty(sPrice)) {
+                spinKitView.setVisibility(View.VISIBLE);
+
+
+            } else {
+                Toast.makeText(AddProductActivity.this, "Enter required values in above fields", Toast.LENGTH_LONG).show();
+                spinKitView.setVisibility(View.GONE);
             }
-        });
 
-    }
-
-    public void Submit() {
-        final String sName = name.getText().toString();
-        String sPrice = price.getText().toString();
-
-        if (!TextUtils.isEmpty(sName) && !TextUtils.isEmpty(sPrice)) {
-
-            spinKitView.setVisibility(View.VISIBLE);
-
-
-
-
-        } else {
-            Toast.makeText(AddProductActivity.this, "Enter required values in above fields", Toast.LENGTH_LONG).show();
-            spinKitView.setVisibility(View.GONE);
         }
-
     }
-
 }

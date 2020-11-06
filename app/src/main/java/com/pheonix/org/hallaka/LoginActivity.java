@@ -159,7 +159,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
-        if(auth!=null){
+        if(auth.getCurrentUser()!=null){
             spinKitView.setVisibility(View.VISIBLE);
             FirebaseDatabase.getInstance().getReference("users").child("profiles").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override

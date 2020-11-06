@@ -21,6 +21,7 @@
                 android:id="@+id/mainTabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:tabMode="fixed"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:tabTextColor="@color/colorBlue"
                 android:background="@color/colorWhite"/>
