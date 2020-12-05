@@ -1,18 +1,29 @@
 package com.pheonix.org.hallaka.Models;
 
+import android.net.Uri;
+
 public class ProductDataModel {
 
-    String name,price,image,uid,tag;
+    String name,price,image,uid,pId,tag;
 
     public ProductDataModel() {
     }
 
-    public ProductDataModel(String name, String price, String image, String uid, String tag) {
+    public ProductDataModel(String name, String price, String image, String uid, String pId, String tag) {
         this.name = name;
         this.price = price;
         this.image = image;
         this.uid = uid;
+        this.pId = pId;
         this.tag = tag;
+    }
+
+    public String getpId() {
+        return pId;
+    }
+
+    public void setpId(String pId) {
+        this.pId = pId;
     }
 
     public String getName() {

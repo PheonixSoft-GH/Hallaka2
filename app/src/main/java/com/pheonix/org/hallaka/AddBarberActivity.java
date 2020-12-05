@@ -8,14 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import com.github.ybq.android.spinkit.SpinKitView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class AddBarberActivity extends AppCompatActivity {
 
     ImageView image;
-    EditText name, city, sTiming, cTiming;
+    EditText name, sTiming, cTiming;
     Button submit;
 
     SpinKitView spinKitView;
@@ -56,10 +55,15 @@ public class AddBarberActivity extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(AddBarberActivity.this, "Enter required values in above fields", Toast.LENGTH_LONG).show();
+            showSnackBar("Enter required values in above fields");
             spinKitView.setVisibility(View.GONE);
         }
 
     }
-
+    private void showSnackBar(String s) {
+        Snackbar.make(findViewById(R.id.addBarberLay), s, Snackbar.LENGTH_LONG)
+                .setBackgroundTint(getResources().getColor(R.color.colorBlue))
+                .setTextColor(getResources().getColor(R.color.colorWhite))
+                .show();
+    }
 }

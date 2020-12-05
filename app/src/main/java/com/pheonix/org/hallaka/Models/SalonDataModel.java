@@ -2,18 +2,25 @@ package com.pheonix.org.hallaka.Models;
 
 public class SalonDataModel {
 
-    String name,city,image,id;
+    String name, city, image, id, ownerId;
 
     public SalonDataModel() {
     }
 
-    public SalonDataModel(String name, String city, String image, String id) {
+    public SalonDataModel(String name, String city, String image, String id, String ownerId) {
         this.name = name;
         this.city = city;
         this.image = image;
         this.id = id;
+        this.ownerId = ownerId;
     }
 
+    public String getOwnerId() {
+        return ownerId;
+    }
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
     public String getName() {
         return name;
     }

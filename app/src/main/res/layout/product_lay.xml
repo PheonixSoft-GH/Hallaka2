@@ -25,18 +25,19 @@
             android:layout_below="@+id/productImageProLay"
             android:layout_centerHorizontal="true"
             android:text="Hair Wax"
-            android:textColor="@color/colorBlue"
+            android:textColor="@color/colorWhite"
             android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/productPriceProLay"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/productNameProLay"
             android:layout_alignParentStart="true"
             android:text="$25"
-            android:textColor="@color/colorBlue"
-            android:textSize="16sp"/>
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp"/>
 
         <ImageView
             android:id="@+id/addToCartProLay"

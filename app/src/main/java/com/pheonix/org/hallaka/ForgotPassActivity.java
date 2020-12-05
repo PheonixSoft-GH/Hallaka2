@@ -10,10 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPassActivity extends AppCompatActivity implements View.OnClickListener {
@@ -56,13 +56,13 @@ public class ForgotPassActivity extends AppCompatActivity implements View.OnClic
                             }).setCancelable(false).show();
                         } else {
                             String m = task.getException().getMessage();
-                            Toast.makeText(ForgotPassActivity.this, m, Toast.LENGTH_SHORT).show();
+                            showSnackBar(m);
                         }
                     }
                 });
 
             } else {
-                Toast.makeText(this, "Please enter email first", Toast.LENGTH_SHORT).show();
+                showSnackBar("Please enter email first");
             }
 
         }
@@ -78,5 +78,11 @@ public class ForgotPassActivity extends AppCompatActivity implements View.OnClic
         Intent intent = new Intent(ForgotPassActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
+    }
+    private void showSnackBar(String s) {
+        Snackbar.make(findViewById(R.id.forgotPassLay), s, Snackbar.LENGTH_LONG)
+                .setBackgroundTint(getResources().getColor(R.color.colorBlue))
+                .setTextColor(getResources().getColor(R.color.colorWhite))
+                .show();
     }
 }

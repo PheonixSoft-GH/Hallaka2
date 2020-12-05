@@ -3,6 +3,7 @@ package com.pheonix.org.hallaka;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,11 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
@@ -23,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pheonix.org.hallaka.Utils.Funcs;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -89,14 +91,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (!TextUtils.isEmpty(uEmail) && !TextUtils.isEmpty(uPassword)) {
 
             spinKitView.setVisibility(View.VISIBLE);
+            Funcs.disableCurrentScreen(getActivity());
             if (uEmail.equalsIgnoreCase("admin@hallaka.com")) {
 
                 if (uPassword.equals("1234567890")) {
-                    Toast.makeText(this, "Logged in as Admin!", Toast.LENGTH_SHORT).show();
+
+                    showSnackBar("Logged in as Admin!");
                     spinKitView.setVisibility(View.GONE);
+                    Funcs.enableCurrentScreen(getActivity());
                 } else {
-                    Toast.makeText(this, "Admin Password not right!", Toast.LENGTH_SHORT).show();
+                    showSnackBar("Admin Password not right!");
                     spinKitView.setVisibility(View.GONE);
+                    Funcs.enableCurrentScreen(getActivity());
                 }
 
             } else {
@@ -110,19 +116,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             FirebaseDatabase.getInstance().getReference("users").child("profiles").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if(snapshot.exists()){
-                                        spinKitView.setVisibility(View.INVISIBLE);
-                                        String type=snapshot.child("type").getValue(String.class);
+                                    if (snapshot.exists()) {
+                                        spinKitView.setVisibility(View.GONE);
+                                        Funcs.enableCurrentScreen(getActivity());
+                                        String type = snapshot.child("type").getValue(String.class);
 
-                                        if(type.equalsIgnoreCase("Customer")){
-
-//                                            Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                                        if (type.equalsIgnoreCase("Customer")) {
                                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                             intent.putExtra("data", uEmail);
                                             finish();
                                             startActivity(intent);
-                                        }
-                                        else{
+                                        } else {
                                             Intent intent = new Intent(LoginActivity.this, BarberActivity.class);
                                             intent.putExtra("data", uEmail);
                                             finish();
@@ -139,10 +143,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             });
 
 
-
                         } else {
                             spinKitView.setVisibility(View.INVISIBLE);
-                            Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_LONG).show();
+                            Funcs.enableCurrentScreen(getActivity());
+                            showSnackBar(task.getException().getMessage());
                         }
 
                     }
@@ -150,38 +154,45 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
 
         } else {
-            Toast.makeText(LoginActivity.this, "Enter required values in above fields", Toast.LENGTH_LONG).show();
+            showSnackBar("Enter required values in above fields");
             spinKitView.setVisibility(View.GONE);
+            Funcs.enableCurrentScreen(getActivity());
         }
 
+    }
+
+    private Activity getActivity() {
+        return LoginActivity.this;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(auth.getCurrentUser()!=null){
+        if (auth.getCurrentUser() != null) {
             spinKitView.setVisibility(View.VISIBLE);
+            Funcs.disableCurrentScreen(getActivity());
             FirebaseDatabase.getInstance().getReference("users").child("profiles").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.exists()){
+                    if (snapshot.exists()) {
                         spinKitView.setVisibility(View.INVISIBLE);
-                        String type=snapshot.child("type").getValue(String.class);
+                        Funcs.enableCurrentScreen(getActivity());
+                        String type = snapshot.child("type").getValue(String.class);
 
-                        if(type.equalsIgnoreCase("Customer")){
+                        if (type.equalsIgnoreCase("Customer")) {
 
-//                                            Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             intent.putExtra("data", auth.getCurrentUser().getEmail());
                             startActivity(intent);
                             finish();
                             spinKitView.setVisibility(View.GONE);
-                        }
-                        else{
+                            Funcs.enableCurrentScreen(getActivity());
+                        } else {
                             Intent intent = new Intent(LoginActivity.this, BarberActivity.class);
                             intent.putExtra("data", auth.getCurrentUser().getEmail());
                             startActivity(intent);
                             spinKitView.setVisibility(View.GONE);
+                            Funcs.enableCurrentScreen(getActivity());
                             finish();
                         }
 
@@ -191,9 +202,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
                     spinKitView.setVisibility(View.GONE);
+                    Funcs.enableCurrentScreen(getActivity());
                 }
             });
 
         }
+    }
+
+    private void showSnackBar(String s) {
+        Snackbar.make(findViewById(R.id.loginLay), s, Snackbar.LENGTH_LONG)
+                .setBackgroundTint(getResources().getColor(R.color.colorBlue))
+                .setTextColor(getResources().getColor(R.color.colorWhite))
+                .show();
     }
 }

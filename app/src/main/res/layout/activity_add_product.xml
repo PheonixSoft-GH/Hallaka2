@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addProductLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
@@ -12,11 +13,11 @@
         android:id="@+id/addProductTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="Add Product Details"
+        android:text="@string/add_product_details"
         android:textColor="@color/colorBlue"
         android:textSize="25sp"
-        android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
     <ImageView
@@ -26,8 +27,8 @@
         android:layout_below="@+id/addProductTxt"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:src="@drawable/ic_add_photo"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_add_photo" />
 
     <EditText
         android:id="@+id/productNameAddPro"
@@ -42,9 +43,9 @@
         android:hint="Product Name"
         android:inputType="text"
         android:maxLines="1"
-        android:textSize="15sp"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp" />
+        android:paddingEnd="15dp"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/productPriceAddPro"
@@ -57,20 +58,27 @@
         android:ems="100"
         android:fontFamily="sans-serif"
         android:hint="Product Price"
-        android:textSize="15sp"
         android:inputType="numberDecimal"
         android:maxLines="1"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp" />
+        android:paddingEnd="15dp"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/productTypeSp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/productPriceAddPro"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/addProductId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/productPriceAddPro"
+        android:layout_below="@id/productTypeSp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_button"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="15sp" />
@@ -78,14 +86,15 @@
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spin_kit"
         style="@style/SpinKitView.Large.Circle"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="20dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/loading_back"
-        app:elevation="12dp"
-        android:padding="12dp"
+
         android:visibility="invisible"
-        app:SpinKit_Color="@color/colorBlueDark" />
+        app:SpinKit_Color="@color/colorBlueDark"
+        app:elevation="12dp" />
 
 </RelativeLayout>

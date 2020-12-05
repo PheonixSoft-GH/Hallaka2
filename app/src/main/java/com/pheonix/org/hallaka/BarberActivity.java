@@ -1,5 +1,6 @@
 package com.pheonix.org.hallaka;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -9,8 +10,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class BarberActivity extends AppCompatActivity {
 
@@ -46,7 +53,7 @@ public class BarberActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(BarberActivity.this,ProductsActivity.class);
+                Intent intent = new Intent(BarberActivity.this, ProductsActivity.class);
                 startActivity(intent);
 
             }
@@ -56,11 +63,30 @@ public class BarberActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(BarberActivity.this,AddSalonActivity.class);
-                startActivity(intent);
+                FirebaseDatabase.getInstance().getReference("saloons").orderByChild("ownerId").equalTo(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            startActivity(new Intent(BarberActivity.this, SalonActivity.class));
+
+                        } else {
+                            addSaloonIntent();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
         });
 
+    }
+
+    private void addSaloonIntent() {
+        Intent intent = new Intent(BarberActivity.this, AddSalonActivity.class);
+        startActivity(intent);
     }
 }

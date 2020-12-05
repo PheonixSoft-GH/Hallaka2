@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.util.List;
@@ -14,28 +15,33 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.pheonix.org.hallaka.Models.ProductDataModel;
+import com.squareup.picasso.Picasso;
+
 class activityHandler extends RecyclerView.Adapter<activityViewHolderAct> {
 
-    List<Integer> list;
+    List<ProductDataModel> list;
 
-    public activityHandler(List<Integer> list) {
+    public activityHandler(List<ProductDataModel> list) {
         this.list = list;
     }
 
 
+    @NonNull
     @Override
     public activityViewHolderAct onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = (View) LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.product_lay, viewGroup, false);
 
-        activityViewHolderAct activityViewHolderRunning = new activityViewHolderAct(view);
-
-        return activityViewHolderRunning;
+        return new activityViewHolderAct(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final activityViewHolderAct viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final activityViewHolderAct v, final int i) {
 
+        v.price.setText(list.get(i).getPrice()+" RS");
+        v.name.setText(list.get(i).getName());
 
+        Picasso.get().load(list.get(i).getImage()).into(v.img);
 
     }
 
@@ -48,13 +54,14 @@ class activityHandler extends RecyclerView.Adapter<activityViewHolderAct> {
 
 class activityViewHolderAct extends RecyclerView.ViewHolder {
 
-    
+    ImageView img;
+    TextView name,price;
+    public activityViewHolderAct(@NonNull final View v) {
+        super(v);
 
-
-    public activityViewHolderAct(@NonNull final View itemView) {
-        super(itemView);
-
-
+        img=v.findViewById(R.id.productImageProLay);
+        name=v.findViewById(R.id.productNameProLay);
+        price=v.findViewById(R.id.productPriceProLay);
 
     }
 

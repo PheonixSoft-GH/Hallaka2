@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/loginLay"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:padding="20dp"
@@ -148,12 +149,12 @@
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spin_kit"
         style="@style/SpinKitView.Large.Circle"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="20dp"
         android:layout_centerInParent="true"
         android:background="@drawable/loading_back"
-        android:elevation="12dp"
-        android:padding="12dp"
+        app:elevation="12dp"
         android:visibility="gone"
         app:SpinKit_Color="@color/colorBlueDark" />
 

@@ -4,4 +4,8 @@
     <string name="groom_your_look_with_us">Groom your look with us</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_product_details">Add Product Details</string>
+    <string name="submit">Submit</string>
+    <string name="my_products">My Products</string>
+    <string name="set_your_timing">Set your timing</string>
 </resources>

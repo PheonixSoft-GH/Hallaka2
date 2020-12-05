@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/menu_back"
-            android:paddingTop="8dp"
             android:paddingStart="12dp"
+            android:paddingTop="8dp"
             android:paddingEnd="12dp"
             android:paddingBottom="8dp">
 
@@ -28,7 +28,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/ic_menu"
+                app:tint="@color/colorWhite" />
 
 
             <TextView
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/menuBtnBarber"
                 android:text="Eddy Peter"
-                android:textColor="#3D4FB8"
+                android:textColor="@color/colorWhite"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -50,7 +51,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/menuBtnBarber"
                 android:text="Barber"
-                android:textColor="#3D4FB8"
+                android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
 
         </RelativeLayout>
@@ -80,7 +81,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_shop" />
+                    android:src="@drawable/ic_shop"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/salonTxtBarber"
@@ -89,7 +91,7 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="Salon"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -109,7 +111,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_booking" />
+                    android:src="@drawable/ic_booking"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/viewBookingTxtBarber"
@@ -118,7 +121,7 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="View Booking"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -138,7 +141,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_add_product" />
+                    android:src="@drawable/ic_add_product"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/productTxtBarber"
@@ -147,7 +151,7 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="Products"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -167,7 +171,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_history" />
+                    android:src="@drawable/ic_history"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/historyTxtBarber"
@@ -176,7 +181,7 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="History"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -209,7 +214,7 @@
                 android:background="@drawable/menu_back"
                 android:text="Exit"
                 android:gravity="center"
-                android:textColor="@color/colorBlue"
+                android:textColor="@color/colorWhite"
                 android:textSize="15sp" />
 
         </RelativeLayout>

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addBarberLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
@@ -12,11 +13,11 @@
         android:id="@+id/addBarberTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:text="Add Barber"
         android:textColor="@color/colorBlue"
         android:textSize="25sp"
-        android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
     <ImageView
@@ -26,8 +27,8 @@
         android:layout_below="@+id/addBarberTxt"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_add_photo"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_add_photo" />
 
     <EditText
         android:id="@+id/barberNameAddBarber"
@@ -42,9 +43,9 @@
         android:hint="Barber Name"
         android:inputType="text"
         android:maxLines="1"
-        android:textSize="15sp"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp" />
+        android:paddingEnd="15dp"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/barberRateAddBarber"
@@ -57,11 +58,11 @@
         android:ems="100"
         android:fontFamily="sans-serif"
         android:hint="Rate per Hour"
-        android:textSize="15sp"
         android:inputType="numberDecimal"
         android:maxLines="1"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp" />
+        android:paddingEnd="15dp"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/timingTxtAddBarber"
@@ -69,9 +70,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/barberRateAddBarber"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
         android:paddingStart="12dp"
         android:paddingTop="0dp"
-        android:layout_marginBottom="7dp"
         android:paddingEnd="8dp"
         android:text="Timing"
         android:textColor="@color/colorBlue"
@@ -83,20 +84,20 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_below="@+id/timingTxtAddBarber"
-        android:layout_toStartOf="@+id/barberCTimingAddBarber"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/barberCTimingAddBarber"
         android:autofillHints=""
-        android:gravity="center"
         android:background="@drawable/back_lay_border_gray"
         android:ems="100"
         android:fontFamily="sans-serif"
+        android:gravity="center"
         android:hint="Starting Time"
-        android:textSize="15sp"
         android:inputType="time"
         android:maxLines="1"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp" />
+        android:paddingEnd="15dp"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/barberCTimingAddBarber"
@@ -108,14 +109,14 @@
         android:autofillHints=""
         android:background="@drawable/back_lay_border_gray"
         android:ems="100"
-        android:gravity="center"
         android:fontFamily="sans-serif"
+        android:gravity="center"
         android:hint="Closing Time"
-        android:textSize="15sp"
         android:inputType="time"
         android:maxLines="1"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp" />
+        android:paddingEnd="15dp"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/addBarberId"
@@ -137,9 +138,9 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/loading_back"
-        app:elevation="12dp"
         android:padding="12dp"
         android:visibility="invisible"
-        app:SpinKit_Color="@color/colorBlueDark" />
+        app:SpinKit_Color="@color/colorBlueDark"
+        app:elevation="12dp" />
 
 </RelativeLayout>

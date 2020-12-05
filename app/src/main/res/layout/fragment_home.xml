@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFragLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
@@ -16,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/menu_back"
-            android:paddingTop="8dp"
             android:paddingStart="12dp"
+            android:paddingTop="8dp"
             android:paddingEnd="12dp"
             android:paddingBottom="8dp">
 
@@ -26,19 +28,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Eddy Peter"
-                android:textStyle="bold"
-                android:textColor="#3D4FB8"
-                android:textSize="20sp" />
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/typeHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/userNameHome"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"
                 android:text="Customer"
-                android:textColor="#3D4FB8"
+                android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
 
         </RelativeLayout>
@@ -67,7 +69,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_booking" />
+                    android:src="@drawable/ic_booking"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/bookingTxtHome"
@@ -76,7 +79,7 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="Booking"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -96,7 +99,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_upcoming" />
+                    android:src="@drawable/ic_upcoming"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/upComingTxtHome"
@@ -105,7 +109,7 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="Up Coming"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -125,7 +129,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_cart" />
+                    android:src="@drawable/ic_cart"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/cartTxtHome"
@@ -134,7 +139,7 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="Cart"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -154,7 +159,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginTop="6dp"
-                    android:src="@drawable/ic_history" />
+                    android:src="@drawable/ic_history"
+                    app:tint="@color/colorWhite" />
 
                 <TextView
                     android:id="@+id/historyTxtHome"
@@ -163,21 +169,27 @@
                     android:layout_marginTop="3dp"
                     android:gravity="center"
                     android:text="History"
-                    android:textColor="#3D4FB8"
+                    android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_below="@+id/menuLayHome"
             android:layout_marginTop="10dp"
-            android:background="@drawable/menu_back"
             android:padding="8dp" />
+
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="160dp"-->
+        <!--            android:background="@drawable/round_frame" />-->
+
 
         <RelativeLayout
             android:id="@+id/lookBookLayHome"
@@ -195,9 +207,9 @@
                 android:paddingTop="8dp"
                 android:paddingEnd="8dp"
                 android:text="Look Book"
-                android:textStyle="bold"
-                android:textColor="@color/colorBlue"
-                android:textSize="18sp" />
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/lookBookIdHome"
