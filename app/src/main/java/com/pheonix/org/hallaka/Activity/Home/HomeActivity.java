@@ -1,12 +1,13 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
+import com.pheonix.org.hallaka.Adapters.TabsAccessAdapterHome;
+import com.pheonix.org.hallaka.R;
 
 public class HomeActivity extends AppCompatActivity {
 

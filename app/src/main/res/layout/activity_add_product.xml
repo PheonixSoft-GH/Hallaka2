@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:padding="20dp"
-    tools:context=".AddProductActivity">
+    tools:context=".Activity.AddProduct.AddProductActivity">
 
     <TextView
         android:id="@+id/addProductTxt"

@@ -1,8 +1,13 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Adapters;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.pheonix.org.hallaka.Activity.Home.Fragments.Shop.Fragments.BodyCareFragment;
+import com.pheonix.org.hallaka.Activity.Home.Fragments.Shop.Fragments.HairCareFragment;
+import com.pheonix.org.hallaka.Activity.Home.Fragments.Shop.Fragments.SprayFragment;
+import com.pheonix.org.hallaka.Activity.Home.Fragments.Shop.Fragments.WaxFragment;
 
 public class TabsAccessAdapterShop extends FragmentPagerAdapter {
 

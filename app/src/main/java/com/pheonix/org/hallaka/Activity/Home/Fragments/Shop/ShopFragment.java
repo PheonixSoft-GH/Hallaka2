@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.Home.Fragments.Shop;
 
 import android.os.Bundle;
 
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
+import com.pheonix.org.hallaka.Adapters.TabsAccessAdapterShop;
+import com.pheonix.org.hallaka.R;
 
 
 public class ShopFragment extends Fragment {

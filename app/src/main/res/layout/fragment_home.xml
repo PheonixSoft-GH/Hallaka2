@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:padding="10dp"
-    tools:context=".HomeFragment">
+    tools:context=".Activity.Home.Fragments.Home.HomeFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.Home.Fragments.Shop.Fragments;
 
 import android.os.Bundle;
 
@@ -15,43 +15,50 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pheonix.org.hallaka.Adapters.ProductsHandler;
 import com.pheonix.org.hallaka.Models.ProductDataModel;
+import com.pheonix.org.hallaka.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BodyCareFragment extends Fragment {
+public class SprayFragment extends Fragment {
     RecyclerView recycler;
-    activityHandler handler;
+    ProductsHandler handler;
     View v;
     List<ProductDataModel> list = new ArrayList<>();
-    public BodyCareFragment() {
+
+    public SprayFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_body_care, container, false);
-        recycler = v.findViewById(R.id.bodyCareRecycler);
+        // Inflate the layout for this fragment
+        v = inflater.inflate(R.layout.fragment_spray, container, false);
+
+        recycler = v.findViewById(R.id.sprayRecycler);
         RecyclerView.LayoutManager manager = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(manager);
 
-        handler = new activityHandler(list);
+        handler = new ProductsHandler(list);
         recycler.setAdapter(handler);
 
         return v;
-
     }
+
+    @Override
     public void onResume() {
         super.onResume();
 
-        FirebaseDatabase.getInstance().getReference("products").orderByChild("tag").equalTo("Body Care").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("products").orderByChild("tag").equalTo("Spray").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     list.clear();
                     for (DataSnapshot d : snapshot.getChildren()) {
+
                         ProductDataModel model = d.getValue(ProductDataModel.class);
                         list.add(model);
 

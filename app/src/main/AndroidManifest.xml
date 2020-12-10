@@ -12,18 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddBarberActivity" />
-        <activity android:name=".AddSalonActivity" />
-        <activity android:name=".AddProductActivity" />
-        <activity android:name=".ProductsActivity" />
-        <activity android:name=".SalonActivity" />
-        <activity android:name=".BarberActivity" />
-        <activity android:name=".BookingActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".ForgotPassActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.AddBarber.AddBarberActivity" />
+        <activity android:name=".Activity.AddSaloon.AddSalonActivity" />
+        <activity android:name=".Activity.AddProduct.AddProductActivity" />
+        <activity android:name=".Activity.Product.ProductsActivity" />
+        <activity android:name=".Activity.Salon.SalonActivity" />
+        <activity android:name=".Activity.Barber.BarberActivity" />
+        <activity android:name=".Activity.Booking.BookingActivity" />
+        <activity android:name=".Activity.Home.HomeActivity" />
+        <activity android:name=".Activity.ForgotPassword.ForgotPassActivity" />
+        <activity android:name=".Activity.SignUp.SignupActivity" />
+        <activity android:name=".Activity.Login.LoginActivity" />
+        <activity android:name=".Activity.Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

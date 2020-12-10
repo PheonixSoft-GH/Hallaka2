@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.AddProduct;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,13 +21,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.pheonix.org.hallaka.Models.ProductDataModel;
+import com.pheonix.org.hallaka.R;
 import com.pheonix.org.hallaka.Utils.Funcs;
 
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.ForgotPassword;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.pheonix.org.hallaka.Activity.Login.LoginActivity;
+import com.pheonix.org.hallaka.R;
 
 public class ForgotPassActivity extends AppCompatActivity implements View.OnClickListener {
 

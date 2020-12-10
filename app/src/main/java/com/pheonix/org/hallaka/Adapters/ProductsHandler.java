@@ -1,42 +1,39 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Adapters;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.File;
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pheonix.org.hallaka.Models.ProductDataModel;
+import com.pheonix.org.hallaka.R;
 import com.squareup.picasso.Picasso;
 
-class activityHandler extends RecyclerView.Adapter<activityViewHolderAct> {
+public class ProductsHandler extends RecyclerView.Adapter<ProductsViewHolder> {
 
     List<ProductDataModel> list;
 
-    public activityHandler(List<ProductDataModel> list) {
+    public ProductsHandler(List<ProductDataModel> list) {
         this.list = list;
     }
 
 
     @NonNull
     @Override
-    public activityViewHolderAct onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = (View) LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.product_lay, viewGroup, false);
+    public ProductsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view =LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.product_lay, viewGroup, false);
 
-        return new activityViewHolderAct(view);
+        return new ProductsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final activityViewHolderAct v, final int i) {
+    public void onBindViewHolder(@NonNull final ProductsViewHolder v, final int i) {
 
         v.price.setText(list.get(i).getPrice()+" RS");
         v.name.setText(list.get(i).getName());
@@ -52,11 +49,11 @@ class activityHandler extends RecyclerView.Adapter<activityViewHolderAct> {
     }
 }
 
-class activityViewHolderAct extends RecyclerView.ViewHolder {
+class ProductsViewHolder extends RecyclerView.ViewHolder {
 
     ImageView img;
     TextView name,price;
-    public activityViewHolderAct(@NonNull final View v) {
+    public ProductsViewHolder(@NonNull final View v) {
         super(v);
 
         img=v.findViewById(R.id.productImageProLay);

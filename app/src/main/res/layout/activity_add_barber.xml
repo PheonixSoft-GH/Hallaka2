@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:padding="20dp"
-    tools:context=".AddBarberActivity">
+    tools:context=".Activity.AddBarber.AddBarberActivity">
 
     <TextView
         android:id="@+id/addBarberTxt"
@@ -79,7 +79,7 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:id="@+id/barberSTimingAddBarber"
         android:layout_width="120dp"
         android:layout_height="50dp"
@@ -99,7 +99,7 @@
         android:paddingEnd="15dp"
         android:textSize="15sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/barberCTimingAddBarber"
         android:layout_width="120dp"
         android:layout_height="50dp"

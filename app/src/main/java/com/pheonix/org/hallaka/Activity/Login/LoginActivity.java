@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.Login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +24,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pheonix.org.hallaka.Activity.Barber.BarberActivity;
+import com.pheonix.org.hallaka.Activity.ForgotPassword.ForgotPassActivity;
+import com.pheonix.org.hallaka.Activity.Home.HomeActivity;
+import com.pheonix.org.hallaka.Activity.SignUp.SignupActivity;
+import com.pheonix.org.hallaka.R;
 import com.pheonix.org.hallaka.Utils.Funcs;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -113,7 +120,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if (task.isSuccessful()) {
 
 
-                            FirebaseDatabase.getInstance().getReference("users").child("profiles").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                            FirebaseDatabase.getInstance().getReference("users").child("profiles").child(Objects.requireNonNull(auth.getUid())).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (snapshot.exists()) {
@@ -165,49 +172,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         return LoginActivity.this;
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (auth.getCurrentUser() != null) {
-            spinKitView.setVisibility(View.VISIBLE);
-            Funcs.disableCurrentScreen(getActivity());
-            FirebaseDatabase.getInstance().getReference("users").child("profiles").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.exists()) {
-                        spinKitView.setVisibility(View.INVISIBLE);
-                        Funcs.enableCurrentScreen(getActivity());
-                        String type = snapshot.child("type").getValue(String.class);
 
-                        if (type.equalsIgnoreCase("Customer")) {
-
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            intent.putExtra("data", auth.getCurrentUser().getEmail());
-                            startActivity(intent);
-                            finish();
-                            spinKitView.setVisibility(View.GONE);
-                            Funcs.enableCurrentScreen(getActivity());
-                        } else {
-                            Intent intent = new Intent(LoginActivity.this, BarberActivity.class);
-                            intent.putExtra("data", auth.getCurrentUser().getEmail());
-                            startActivity(intent);
-                            spinKitView.setVisibility(View.GONE);
-                            Funcs.enableCurrentScreen(getActivity());
-                            finish();
-                        }
-
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    spinKitView.setVisibility(View.GONE);
-                    Funcs.enableCurrentScreen(getActivity());
-                }
-            });
-
-        }
-    }
 
     private void showSnackBar(String s) {
         Snackbar.make(findViewById(R.id.loginLay), s, Snackbar.LENGTH_LONG)

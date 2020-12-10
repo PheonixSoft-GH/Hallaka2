@@ -1,6 +1,5 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.Home.Fragments.Home;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,19 +11,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pheonix.org.hallaka.Activity.Booking.BookingActivity;
 import com.pheonix.org.hallaka.Adapters.ViewAdapter;
 import com.pheonix.org.hallaka.Models.UserDataModel;
+import com.pheonix.org.hallaka.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

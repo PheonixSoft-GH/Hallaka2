@@ -11,5 +11,4 @@ public class Funcs {
     public static void enableCurrentScreen(Activity act){
         act.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
     }
-
 }

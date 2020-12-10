@@ -9,23 +9,21 @@
     android:padding="20dp"
     style="@style/Theme.MaterialComponents.Light.NoActionBar"
     android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-    tools:context=".SignupActivity">
+    tools:context=".Activity.SignUp.SignupActivity">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/logoImageSignUp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="0dp"
-        android:padding="0dp"
+        android:layout_marginTop="0dp"
 
-        android:src="@drawable/hallaka_logo" />
+        android:src="@drawable/ic_person_blue" />
 
     <EditText
         android:id="@+id/userNameSignUp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/logoImageSignUp"
         android:layout_marginTop="10dp"
         android:autofillHints=""
@@ -41,7 +39,7 @@
     <EditText
         android:id="@+id/emailSignUp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/userNameSignUp"
         android:layout_marginTop="10dp"
         android:autofillHints=""
@@ -57,14 +55,14 @@
     <EditText
         android:id="@+id/numberSignUp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/emailSignUp"
         android:layout_marginTop="10dp"
         android:autofillHints=""
         android:background="@drawable/back_lay_border_gray"
         android:ems="100"
         android:fontFamily="sans-serif"
-        android:hint="Phone Number"
+        android:hint="@string/phone_number"
         android:textSize="15sp"
         android:inputType="phone"
         android:maxLength="11"
@@ -74,7 +72,7 @@
     <EditText
         android:id="@+id/addressSignUp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/numberSignUp"
         android:layout_marginTop="10dp"
         android:autofillHints=""
@@ -91,7 +89,7 @@
         android:id="@+id/passwordSignUp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         app:hintEnabled="false"
         app:hintAnimationEnabled="false"
 
@@ -112,7 +110,7 @@
             android:hint="Password"
             android:minEms="6"
             android:textColor="@color/colorBlue"
-            android:textSize="15sp">
+            android:textSize="13sp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -148,7 +146,7 @@
     <Button
         android:id="@+id/signUpBtnSignUp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/typeLaySignUp"
         android:layout_marginTop="10dp"
         android:background="@drawable/rounded_button"

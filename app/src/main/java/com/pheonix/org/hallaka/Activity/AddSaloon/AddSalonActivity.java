@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.AddSaloon;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +25,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.pheonix.org.hallaka.Models.SalonDataModel;
+import com.pheonix.org.hallaka.R;
 import com.pheonix.org.hallaka.Utils.Funcs;
 
 import java.util.Random;
@@ -83,6 +84,7 @@ public class AddSalonActivity extends AppCompatActivity implements View.OnClickL
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
                                                 showSnackBar("Product added!");
+
                                                 finish();
                                             } else {
                                                 showSnackBar("Failed to add product!");

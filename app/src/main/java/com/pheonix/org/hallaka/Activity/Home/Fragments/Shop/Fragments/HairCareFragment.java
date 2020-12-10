@@ -1,4 +1,4 @@
-package com.pheonix.org.hallaka;
+package com.pheonix.org.hallaka.Activity.Home.Fragments.Shop.Fragments;
 
 import android.os.Bundle;
 
@@ -15,7 +15,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pheonix.org.hallaka.Adapters.ProductsHandler;
 import com.pheonix.org.hallaka.Models.ProductDataModel;
+import com.pheonix.org.hallaka.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ import java.util.List;
 
 public class HairCareFragment extends Fragment {
     RecyclerView recycler;
-    activityHandler handler;
+    ProductsHandler handler;
     View v;
     List<ProductDataModel> list = new ArrayList<>();
 
@@ -40,7 +42,7 @@ public class HairCareFragment extends Fragment {
         RecyclerView.LayoutManager manager = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(manager);
 
-        handler = new activityHandler(list);
+        handler = new ProductsHandler(list);
         recycler.setAdapter(handler);
 
         return v;
