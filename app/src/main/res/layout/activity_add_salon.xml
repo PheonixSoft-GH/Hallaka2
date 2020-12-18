@@ -84,7 +84,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/loading_back"
-        app:elevation="12dp"
+        android:elevation="12dp"
         android:padding="12dp"
         android:visibility="invisible"
         app:SpinKit_Color="@color/colorBlueDark" />

@@ -21,6 +21,7 @@ import com.pheonix.org.hallaka.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SprayFragment extends Fragment {
     RecyclerView recycler;
@@ -42,7 +43,7 @@ public class SprayFragment extends Fragment {
         RecyclerView.LayoutManager manager = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(manager);
 
-        handler = new ProductsHandler(list);
+        handler = new ProductsHandler(list,getActivity(),true);
         recycler.setAdapter(handler);
 
         return v;
@@ -64,7 +65,9 @@ public class SprayFragment extends Fragment {
 
                         handler.notifyDataSetChanged();
                     }
+                    somethinghere();
                 }
+                else nothinghere();
             }
 
             @Override
@@ -73,5 +76,11 @@ public class SprayFragment extends Fragment {
             }
         });
 
+    }
+    private void nothinghere() {
+        Objects.requireNonNull(getActivity()).findViewById(R.id.nothingHereSpray).setVisibility(View.VISIBLE);
+    }
+    private void somethinghere() {
+        Objects.requireNonNull(getActivity()).findViewById(R.id.nothingHereSpray).setVisibility(View.GONE);
     }
 }

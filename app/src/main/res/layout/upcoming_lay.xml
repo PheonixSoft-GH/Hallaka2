@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/bookingNoLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:textColor="@color/colorBlue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/lay1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_back"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/lay2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookingNoLay">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/saloon"
+            android:textColor="@color/colorBlue"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/saloonNameLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            
+            android:textColor="@color/colorBlue"
+            android:textColorHint="@color/colorBlue"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border_back"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/lay3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay1">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Barber"
+            android:textColor="@color/colorBlue"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/barberNameLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            
+            android:textColor="@color/colorBlue"
+            android:textColorHint="@color/colorBlue"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border_back"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/lay4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay2">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Customer"
+            android:textColor="@color/colorBlue"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/userNameLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            
+            android:textColor="@color/colorBlue"
+            android:textColorHint="@color/colorBlue"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border_back"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/lay5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay3">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Date"
+            android:textColor="@color/colorBlue"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/dateLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            
+            android:textColor="@color/colorBlue"
+            android:textColorHint="@color/colorBlue"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border_back"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/lay6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay4">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/time"
+            android:textColor="@color/colorBlue"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/timeLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            
+            android:textColor="@color/colorBlue"
+            android:textColorHint="@color/colorBlue"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border_back"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/MarkAsDone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay5">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Price"
+            android:textColor="@color/colorBlue"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/priceLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            
+            android:textColor="@color/colorBlue"
+            android:textColorHint="@color/colorBlue"
+            android:textSize="14sp"
+            android:textStyle="bold|italic"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="59dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/markAsDone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/rounded_button"
+        android:text="Mark as Done"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

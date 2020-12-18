@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,7 @@ public class ProductsActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         products.setLayoutManager(layoutManager);
 
-        handler = new ProductsHandler(count);
+        handler = new ProductsHandler(count,getActivity());
         products.setAdapter(handler);
 
         addProduct.setOnClickListener(new View.OnClickListener() {
@@ -55,10 +56,13 @@ public class ProductsActivity extends AppCompatActivity {
 
     }
 
+    private Activity getActivity() {
+        return ProductsActivity.this;
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-
         FirebaseDatabase.getInstance().getReference("products").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -80,4 +84,6 @@ public class ProductsActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

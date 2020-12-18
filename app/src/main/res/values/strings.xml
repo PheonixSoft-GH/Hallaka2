@@ -15,4 +15,26 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="phone_number">Phone Number</string>
+    <string name="lahore">Lahore</string>
+    <string name="search_city_bar_icon">search city bar Icon</string>
+    <string name="select_barber">Select Barber</string>
+    <string name="book">Book</string>
+    <string name="select_time">Select Time</string>
+    <string name="start_time">Start time</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="upcoming_bookings">Upcoming Bookings</string>
+    <string name="saloon_name">Saloon Name:</string>
+    <string name="saloon">Saloon</string>
+    <string name="nothing_here">Nothing here</string>
+    <string name="details">Details</string>
+    <string name="bookings_history">Bookings History</string>
+    <string name="status">Status</string>
+    <string name="_0">0</string>
+    <string name="_1">1</string>
+    <string name="cart">Cart</string>
+    <string name="received">Received</string>
+    <string name="deliver">Deliver</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="exit">Exit</string>
 </resources>

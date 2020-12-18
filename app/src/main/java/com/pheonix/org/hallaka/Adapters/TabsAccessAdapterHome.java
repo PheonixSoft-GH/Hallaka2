@@ -18,11 +18,9 @@ public class TabsAccessAdapterHome extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                HomeFragment homeFragment = new HomeFragment();
-                return homeFragment;
+                return new HomeFragment();
             case 1:
-                ShopFragment shopFragment = new ShopFragment();
-                return shopFragment;
+                return new ShopFragment();
 
             default:
                 return null;
@@ -33,6 +31,8 @@ public class TabsAccessAdapterHome extends FragmentPagerAdapter {
     public int getCount() {
         return 2;
     }
+
+
 
     @Override
     public CharSequence getPageTitle(int position) {

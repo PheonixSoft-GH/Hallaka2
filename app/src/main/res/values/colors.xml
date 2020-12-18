@@ -8,5 +8,6 @@
     <color name="colorBlue">#3D4FB8</color>
     <color name="colorBack">#FFFFFF</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorFadedWhite">#F4F4FF</color>
     <color name="colorFadedGray">#66272727</color>
 </resources>

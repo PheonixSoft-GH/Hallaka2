@@ -37,7 +37,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/menuBtnBarber"
-                android:text="Eddy Peter"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -204,15 +203,30 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center">
-
             <TextView
-                android:id="@+id/exitIdBarber"
+                android:id="@+id/signOutBarber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
                 android:textStyle="bold"
                 android:background="@drawable/menu_back"
+                android:text="Sign Out"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/exitIdBarber"
+                android:layout_below="@id/signOutBarber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/menu_back"
                 android:text="Exit"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
                 android:gravity="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="15sp" />

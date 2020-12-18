@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorBack"
             android:layout_marginTop="10dp"
-            app:elevation="0dp">
+            android:elevation="0dp">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/mainTabsShop"

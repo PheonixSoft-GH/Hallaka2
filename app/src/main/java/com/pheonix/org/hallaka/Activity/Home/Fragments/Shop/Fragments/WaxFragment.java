@@ -21,13 +21,15 @@ import com.pheonix.org.hallaka.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class WaxFragment extends Fragment {
 
     ProductsHandler handler;
     RecyclerView recycler;
     View v;
-    List<ProductDataModel> list=new ArrayList<>();
+    List<ProductDataModel> list = new ArrayList<>();
+
     public WaxFragment() {
         // Required empty public constructor
     }
@@ -38,11 +40,11 @@ public class WaxFragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_wax, container, false);
 
-        recycler=v.findViewById(R.id.waxRecycler);
-        RecyclerView.LayoutManager manager= new GridLayoutManager(getContext(),2);
+        recycler = v.findViewById(R.id.waxRecycler);
+        RecyclerView.LayoutManager manager = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(manager);
 
-        handler=new ProductsHandler(list);
+        handler = new ProductsHandler(list, getActivity(), true);
         recycler.setAdapter(handler);
 
         return v;
@@ -58,19 +60,31 @@ public class WaxFragment extends Fragment {
                 if (snapshot.exists()) {
                     list.clear();
                     for (DataSnapshot d : snapshot.getChildren()) {
-                        ProductDataModel model=d.getValue(ProductDataModel.class);
+                        ProductDataModel model = d.getValue(ProductDataModel.class);
                         list.add(model);
 
                         handler.notifyDataSetChanged();
                     }
+                    somethinghere();
+                }
+                else {
+                    nothinghere();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                nothinghere();
             }
         });
 
+    }
+
+    private void nothinghere() {
+        Objects.requireNonNull(getActivity()).findViewById(R.id.nothingHereWax).setVisibility(View.VISIBLE);
+    }
+
+    private void somethinghere() {
+        Objects.requireNonNull(getActivity()).findViewById(R.id.nothingHereWax).setVisibility(View.GONE);
     }
 }

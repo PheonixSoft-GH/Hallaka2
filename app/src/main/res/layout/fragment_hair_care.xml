@@ -11,5 +11,16 @@
         android:padding="5dp"
         android:id="@+id/hairCareRecycler"
         />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/nothingHereHair"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlue"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:text="@string/nothing_here"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        />
 </RelativeLayout>

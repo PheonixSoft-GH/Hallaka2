@@ -21,7 +21,6 @@ public class ViewAdapter extends PagerAdapter {
     LayoutInflater layoutInflater;
 
     Integer[] images;
-//    Uri[] imagesUri =new Uri[2];
     public ViewAdapter(Context context, Integer[] images) {
         this.context = context;
         this.images = images;

@@ -21,6 +21,7 @@ import com.pheonix.org.hallaka.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BodyCareFragment extends Fragment {
     RecyclerView recycler;
@@ -39,7 +40,7 @@ public class BodyCareFragment extends Fragment {
         RecyclerView.LayoutManager manager = new GridLayoutManager(getContext(), 2);
         recycler.setLayoutManager(manager);
 
-        handler = new ProductsHandler(list);
+        handler = new ProductsHandler(list,getActivity(),true);
         recycler.setAdapter(handler);
 
         return v;
@@ -56,17 +57,27 @@ public class BodyCareFragment extends Fragment {
                     for (DataSnapshot d : snapshot.getChildren()) {
                         ProductDataModel model = d.getValue(ProductDataModel.class);
                         list.add(model);
-
                         handler.notifyDataSetChanged();
                     }
+                    somethinghere();
+                }
+                else {
+                    nothinghere();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                nothinghere();
             }
         });
 
+    }
+
+    private void nothinghere() {
+        Objects.requireNonNull(getActivity()).findViewById(R.id.nothingHereBody).setVisibility(View.VISIBLE);
+    }
+    private void somethinghere() {
+        Objects.requireNonNull(getActivity()).findViewById(R.id.nothingHereBody).setVisibility(View.GONE);
     }
 }
